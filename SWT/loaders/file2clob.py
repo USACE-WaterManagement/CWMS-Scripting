@@ -73,14 +73,14 @@ class Report:
                     "value": self.text
                 }
                 async with session.post(
-                    f"https://wm.swt.ds.usace.army.mil:8243/swt-data/clobs?fail-if-exists={fail_if_exists}",
+                    f"https://T7-tomcat:port/swt-data/clobs?fail-if-exists={fail_if_exists}",
                     headers=headers,
                     json=payload,
                     ssl=False
                 ) as response:
                     if response.status == 201:
                         print(f"Successfully wrote report to CDA ({self.filename}).")
-                        print(f"Access report here: https://wm.swt.ds.usace.army.mil:8243/swt-data/clobs/{self.filename.upper()}?office={OFFICE}")
+                        print(f"Access report here: https://T7-tomcat:port/swt-data/clobs/{self.filename.upper()}?office={OFFICE}")
                     else:
                         print(f"Failed to write report to CDA ({self.filename}). {response.status}: {await response.text()}")
             else:
