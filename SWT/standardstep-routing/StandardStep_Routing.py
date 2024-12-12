@@ -7,13 +7,16 @@
 # displayinmenu=true
 # displaytouser=true
 # displayinselector=true
-from hec.script import *
-from hec.dssgui import ListSelection
-from hec.heclib.dss import *
-from hec.heclib.util import HecDouble
+# from hec.script import *
+# from hec.dssgui import ListSelection
+# from hec.heclib.dss import *
+# from hec.heclib.util import HecDouble
 
-# Updated 10/08/2024 by Charles Graham to work with CWMS 3.2.2
+from hecdss import HecDss, ArrayContainer
+
+
 __version__ = "2.0.0"
+
 
 # Reads in the selected data on the MainWindow of HEC-DSSVue
 mainWindow = ListSelection.getMainWindow()
