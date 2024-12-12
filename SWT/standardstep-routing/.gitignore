@@ -1,0 +1,5 @@
+venv
+hec-dss-python
+*.dss
+__pycache__
+*.lnk
